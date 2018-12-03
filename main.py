@@ -9,7 +9,7 @@ def alert(titoru,content):  # MessageBox(懶人用)
 
 def begin():
     # Draw.configure(background="#ffde8b") # 背景顏色
-    Draw.title("伺服器語言抽籤分組程式") # Title
+    Draw.title("抽籤程式") # Title
     Draw.geometry('400x250')    # Screen Size
     Draw.bind('<Escape>',(lambda event: exit(0))) # 按<ESC>退出
 
