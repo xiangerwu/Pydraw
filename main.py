@@ -13,7 +13,7 @@ def begin():
     Draw.geometry('400x250')    # Screen Size
     Draw.bind('<Escape>',(lambda event: exit(0))) # 按<ESC>退出
 
-def part():
+def main():
     global chance
     global times
     global draws1
@@ -30,9 +30,6 @@ def part():
 
         if(times==0):   # 未設定或已抽完
             alert("警告!"," 0 次你還抽啊")
-            # Input.grid()    # 復原設定按鈕
-            # Confirm.grid()
-            # start.grid_remove() # 移除抽籤按紐
         elif(times>0):  # 未抽完
             times-=1   
             result=random.randint(1,10) # 產生亂數
@@ -52,8 +49,9 @@ def part():
         global draws2
         draws1=0
         draws2=0
-        Draw.geometry('220x155')    
+        # Draw.geometry('220x155')    
         if(len(Input.get())!=0 and len(Lot1.get())!=0 and len(Lot2.get())!=0):
+            Draw.geometry('220x155')
             times=int(Input.get())
             Input.grid_remove()
             Lot1.grid_remove()
@@ -126,7 +124,6 @@ def part():
 
 Draw=Tk()   # 產生視窗
 begin() # 預設視窗大小
-part()
-
+main()
 
 Draw.mainloop()
